@@ -477,8 +477,9 @@ function arealist_view()
       eval("\$arealist_view_bit .= \"" . $templates->get("arealist_catbit") . "\";");
     }
     if ($mybb->user['uid'] != 0 && $mybb->settings['arealiste_userwant']) {
-      //TODO: SETTINGS und SELECT BAUEN
-      $get_selects = $db->simple_select("DISTINCT(arealist_cat)", "forums");
+
+      $get_selects = $db->write_query("SELECT DISTINCT(arealist_cat) 
+      from " . TABLE_PREFIX . "forums WHERE arealist_cat != '' order by arealist_cat");
       $area_select = "";
       while ($data = $db->fetch_array($get_selects)) {
         $area_select .= "<option value=\"" . $data['arealist_cat'] . "\">" . $data['arealist_cat'] . "</option>";
