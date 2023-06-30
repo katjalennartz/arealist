@@ -465,7 +465,7 @@ function arealist_view()
         $arealist_link = "<span class=\"arealist__item arealist__link\"><a href=\"forumdisplay.php?fid={$data['fid']}\" class=\"bl-btn\">{$data['name']}</a></span>";
 
         if (!empty($data['arealist_dscr'])) {
-          $arealist_dscr = "<div class=\"arealist__item arealist__dscr\">" . $arealist_link . $parser->parse_message($data['arealist_dscr'], $options) . "</div>";
+          $arealist_dscr = "<div class=\"arealist__item arealist__dscr\"><span class=\"area_descr\" >".$parser->parse_message($data['arealist_dscr'], $options) . "</span></div>";
         } else {
           $arealist_dscr = "<div class=\"arealist__item arealist__dscr\">{$arealist_link}</div>";
         }
