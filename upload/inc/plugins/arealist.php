@@ -247,6 +247,21 @@ function arealist_install()
   .bl-arealistform label {
       margin-top: 10px;
   }   
+
+  .arealistform {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+}
+
+.arealist-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
   ',
     'cachefile' => $db->escape_string(str_replace('/', '', 'arealist.css')),
     'lastmodified' => time()
